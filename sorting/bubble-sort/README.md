@@ -14,7 +14,7 @@ ALGORITHM bubbleSort(L):
                 swapped := TRUE
             END IF
         END FOR
-    WHILE NOT swapped
+    WHILE swapped
 END
 ```
 The `swap` method is a simple exchange of values between two positions in a list.
