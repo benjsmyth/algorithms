@@ -8,7 +8,7 @@ void bubbleSort(int* array, int size) {
     swapped = 0;
     for (int i=0; i < size-1; i++) {
       if (array[i] > array[i+1]) {
-        swap(i, array);
+        swap(i, i+1, array);
         swapped = 1;
       }
     }
@@ -20,5 +20,6 @@ int main(int argc, char* argv[]) {
   int* array = readInts(argc, argv);
   bubbleSort(array, argc-1);
   print(array, argc-1);
+  free(array);
   return 0;
 }
