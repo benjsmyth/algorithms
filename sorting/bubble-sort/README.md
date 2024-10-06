@@ -27,7 +27,7 @@ END
 ```
 
 ## Optimization
-Bubble sort can be optimized by ignoring elements that have already been sorted. Consider that on the first run, there must be a largest element in the list; since it will be swapped with every element, it will be placed at the last position. Similarly, on the second run there must be a second-largest element in the list; it will be swapped with every element and placed at the second-last position. Therefore, after every run the list can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the last swap occurred. When the cut-off reaches `1`, the algorithm terminates.
+Bubble sort can be optimized by ignoring elements that have already been sorted. Consider that on the first run, there must be a largest element in the list; since it will be swapped with every element, it will be placed at the last position. Similarly, on the second run there must be a second-largest element in the list; it will be swapped with every element and placed at the second-last position. Therefore, after every run the list can be virtually cutoff from the sorted portion, and this cutoff is the index `sorted` where the last swap occurred. When the cutoff reaches `1` or the list is sorted, the algorithm terminates.
 ```
 ALGORITHM bubbleSort(L):
     n := LENGTH(L)
