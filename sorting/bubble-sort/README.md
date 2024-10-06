@@ -44,4 +44,4 @@ ALGORITHM bubbleSort(L):
 END
 ```
 ## Complexity
-Bubble sort is a very inefficient algorithm. In the best case, the time complexity is `O(N)`, but in the average and worst cases, that becomes `O(N^2)` because the algorithm must compare an element to the rest of the elements in the list. Even when optimized, the time this takes grows exponentially as the number of elements grows. However, bubble sort has a space complexity of `O(1)`, as it only needs to consider the value of one element on every run.
+Bubble sort is a very inefficient algorithm. In the best case, the time complexity is `O(N)`, but in the average and worst cases, that becomes `O(N^2)` because the algorithm must compare an element to the rest of the elements in the list. Even when optimized, the time this takes grows exponentially as the number of elements grows. However, bubble sort has a space complexity of `O(1)` because it only requires a constant amount of auxiliary space.
