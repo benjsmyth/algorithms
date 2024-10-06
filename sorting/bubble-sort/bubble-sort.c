@@ -1,25 +1,25 @@
+#include "../sorting.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "../sorting.h"
 
-void bubbleSort(int size, int* ints) {
+void bubbleSort(int n, int* ints) {
   int sorted;
   do {
     sorted = 0;
-    for (int i = 1; i < size; i++) {
-      if (ints[i - 1] > ints[i]) {
-        swap(i-1, i, ints);
+    for (int i = 1; i < n; i++) {
+      if (ints[i] < ints[i-1]) {
+        swap(i, i-1, ints);
         sorted = i;
       }
     }
-    size = sorted;
-  } while (sorted > 1);
+    n = sorted;
+  } while (n > 1);
 }
 
 int main(int argc, char* argv[]) {
-  const int SIZE = argc - 1;
-  int* ints = parseInts(SIZE, argv);
-  bubbleSort(SIZE, ints);
-  print(SIZE, ints);
+  const int n = argc-1;
+  int* ints = parseInts(n, argv);
+  bubbleSort(n, ints);
+  print(n, ints);
   free(ints);
 }
