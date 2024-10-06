@@ -3,16 +3,17 @@
 #include "../sorting.h"
 
 void bubbleSort(int size, int* ints) {
-  int swapped;
+  int sorted;
   do {
-    swapped = 0;
-    for (int i = 0; i < size - 1; i++) {
-      if (ints[i] > ints[i + 1]) {
-        swap(i, i+1, ints);
-        swapped = 1;
+    sorted = 0;
+    for (int i = 1; i < size; i++) {
+      if (ints[i - 1] > ints[i]) {
+        swap(i-1, i, ints);
+        sorted = i;
       }
     }
-  } while (swapped == 1);
+    size = sorted;
+  } while (sorted > 1);
 }
 
 int main(int argc, char* argv[]) {
