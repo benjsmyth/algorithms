@@ -1,2 +1,2 @@
-# algorithms
+# Algorithms
 Algorithms in computer science
