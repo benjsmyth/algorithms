@@ -13,13 +13,12 @@ void bubbleSort(int size, int* array) {
       }
     }
   } while (swapped == 1);
-  return;
 }
 
 int main(int argc, char* argv[]) {
-  int* array = readInts(argc, argv);
-  bubbleSort(argc-1, array);
-  print(argc-1, array);
-  free(array);
-  return 0;
+  const int SIZE = argc - 1;
+  int* ints = parseInts(SIZE, argv);
+  bubbleSort(SIZE, ints);
+  print(SIZE, ints);
+  free(ints);
 }

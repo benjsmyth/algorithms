@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void print(int size, int* array) {
-  for (int i=0; i < size; i++)
-    printf("%d\n", array[i]);
-  return;
+int* parseInts(int size, char* argv[]) {
+  int* ints = malloc( sizeof(int) * (size - 1) );
+  for (int i = 1; i < size + 1; i++)
+    ints[i - 1] = atoi(argv[i]);
+  return ints;
 }
 
-int* readInts(int argc, char* argv[]) {
-  int* ints = malloc( sizeof(int) * (argc-1) );
-  for (int i=1; i < argc; i++)
-    ints[i-1] = atoi(argv[i]);
-  return ints;
+void print(int size, int* array) {
+  for (int i = 0; i < size; i++)
+    printf("%d ", array[i]);
+  printf("\n");
 }
 
 void swap(int i, int j, int* array) {
