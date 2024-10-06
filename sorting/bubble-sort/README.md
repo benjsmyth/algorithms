@@ -4,30 +4,38 @@ Bubble sort is a stable sorting algorithm that works by propagating each element
 
 The algorithm keeps track of a Boolean variable `swapped` that checks whether an element was swapped during a run through the list. At the start of each run, `swapped` is `false`, but each time an element is swapped, `swapped` becomes `true`. After the last element is sorted, `swapped` remains `false` and the algorithm terminates.
 ```
-ALGORITHM bubbleSort(L: List of items):
+ALGORITHM bubbleSort(L):
     n := LENGTH(L)
     DO:
         swapped := FALSE
         FOR 1 <= i <= n-1:
             IF L[i] < L[i-1]:
-                swap(L[i], L[i-1])
+                swap(L, i, i-1)
                 swapped := TRUE
             END IF
         END FOR
     WHILE NOT swapped
 END
 ```
+The `swap` method is a simple exchange of values between two positions in a list.
+```
+ALGORITHM swap(L, i, j):
+    temp = L[i]
+    L[i] = L[j]
+    L[j] = temp
+END
+```
 
 ## Optimization
 Bubble sort can be optimized by ignoring elements that have already been sorted. Consider that on the first run, there must be a largest element in the list; since it will be swapped with every element, it will be placed at the last position. Similarly, on the second run there must be a second-largest element in the list; it will be swapped with every element and placed at the second-last position. Therefore, after every run the list can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the last swap occurred. When the cut-off reaches `1`, the algorithm terminates.
 ```
-ALGORITHM bubbleSort(L: List of items):
+ALGORITHM bubbleSort(L):
     n := LENGTH(L)
     DO:
         sorted := 0
         FOR 1 <= i <= n-1:
             IF L[i] < L[i-1]:
-                swap(L[i], L[i-1])
+                swap(L, i, i-1)
                 sorted := i
             END IF
         END FOR
