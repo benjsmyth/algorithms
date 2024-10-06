@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-void swap(int i, int* array) {
-  int temp = array[i];
-  array[i] = array[i+1];
-  array[i+1] = temp;
-}
+#include "../sorting.h"
 
 void bubbleSort(int* array, int size) {
   int swapped;
@@ -21,18 +16,9 @@ void bubbleSort(int* array, int size) {
   return;
 }
 
-void print(int* array, int size) {
-  for (int i = 0; i < size; i++)
-    printf("%d\n", array[i]);
-  return;
-}
-
 int main(int argc, char* argv[]) {
-  int size = argc-1;
-  int array[size];
-  for (int i=1; i < argc; i++)
-    array[i-1] = atoi(argv[i]);
-  bubbleSort(array, size);
-  print(array, size);
+  int* array = readInts(argc, argv);
+  bubbleSort(array, argc-1);
+  print(array, argc-1);
   return 0;
 }
