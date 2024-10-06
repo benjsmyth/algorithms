@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void print(int* array, int size) {
+void print(int size, int* array) {
   for (int i=0; i < size; i++)
     printf("%d\n", array[i]);
   return;
 }
 
-int* readInts(int count, char* strings[]) {
-  int* ints = malloc( sizeof(int) * (count-1) );
-  for (int i=1; i < count; i++)
-    ints[i-1] = atoi(strings[i]);
+int* readInts(int argc, char* argv[]) {
+  int* ints = malloc( sizeof(int) * (argc-1) );
+  for (int i=1; i < argc; i++)
+    ints[i-1] = atoi(argv[i]);
   return ints;
 }
 
