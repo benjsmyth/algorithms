@@ -1,6 +1,4 @@
 #include "../sorting.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void bubbleSort(int n, int* ints) {
   int sorted;
