@@ -1,8 +1,19 @@
 # Bubble sort
 ## Algorithm
-Bubble sort is a stable sorting algorithm that works by propagating each element higher up the list until the element reaches its final position. Each time bubble sort runs through the list, it checks adjacent elements and swaps them if they are unordered. Bubble sort repeats this process until the list is sorted.
-
-The algorithm keeps track of a Boolean variable `swapped` that checks whether an element was swapped during a run through the list. At the start of each run, `swapped` is `false`, but each time an element is swapped, `swapped` becomes `true`. After the last element is sorted, `swapped` remains `false` and the algorithm terminates.
+Bubble sort is a stable, online sorting algorithm that works by repeatedly swapping adjacents elements in a list. Each time the algorithm runs through the list, it effectively sorts the next highest element in the list. The algorithm repeats this process until the list is sorted.
+```
+ALGORITHM bubbleSort(L):
+    FOR 0 <= i < n:
+        FOR 1 <= j < n:
+            IF L[j] < L[j-1]:
+                swap(L, j, j-1)
+            END IF
+        END FOR
+    END FOR
+END ALGORITHM
+```
+## Optimization
+Bubble sort can be optimized by terminating when the list has been sorted early. To do this, the algorithm can keep track of a Boolean variable `swapped` that checks whether or not an element was swapped during the last run through the list. During the last run, when all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
 ALGORITHM bubbleSort(L):
     n := LENGTH(L)
@@ -15,19 +26,9 @@ ALGORITHM bubbleSort(L):
             END IF
         END FOR
     WHILE swapped
-END
+END ALGORITHM
 ```
-The `swap` method is a simple exchange of values between two positions in a list.
-```
-ALGORITHM swap(L, i, j):
-    temp = L[i]
-    L[i] = L[j]
-    L[j] = temp
-END
-```
-
-## Optimization
-Bubble sort can be optimized by ignoring elements that have already been sorted. Consider that on the first run, there must be a largest element in the list; since it will be swapped with every element, it will be placed at the last position. Similarly, on the second run there must be a second-largest element in the list; it will be swapped with every element and placed at the second-last position. Therefore, after every run the list can be virtually cutoff from the sorted portion, and this cutoff is the index `sorted` where the last swap occurred. When the cutoff reaches `1` or the list is sorted, the algorithm terminates.
+Bubble sort can be optimized further by ignoring elements that have already been sorted. After every run the list can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the last swap occurred. When the cut-off reaches `1`, the algorithm terminates; if the list is sorted early, then the cut-off remains `0` and the algorithm terminates early.
 ```
 ALGORITHM bubbleSort(L):
     n := LENGTH(L)
@@ -41,7 +42,7 @@ ALGORITHM bubbleSort(L):
         END FOR
         n = sorted
     WHILE n > 1
-END
+END ALGORITHM
 ```
 ## Complexity
-Bubble sort is a very inefficient algorithm. In the best case, the time complexity is `O(N)`, but in the average and worst cases, that becomes `O(N^2)` because the algorithm must compare an element to the rest of the elements in the list. Even when optimized, the time this takes grows exponentially as the number of elements grows. However, bubble sort has a space complexity of `O(1)` because it only requires a constant amount of auxiliary space.
+Optimized or not, bubble sort is an inefficient algorithm. In the best case the time complexity is `O(N)`, but in the average and worst cases that becomes `O(N^2)` because the algorithm must compare an element to the rest of the elements in the list. However, bubble sort has a space complexity of `O(1)` because it only requires a constant amount of auxiliary space.
