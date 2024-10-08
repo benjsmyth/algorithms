@@ -3,6 +3,7 @@
 Bubble sort is a stable, online sorting algorithm that works by repeatedly swapping adjacents elements in a list. Each time the algorithm runs through the list, it effectively sorts the next highest element in the list. The algorithm repeats this process until the list is sorted.
 ```
 ALGORITHM bubbleSort(L):
+    n := LENGTH(L)
     FOR 0 <= i < n:
         FOR 1 <= j < n:
             IF L[j] < L[j-1]:
@@ -13,7 +14,7 @@ ALGORITHM bubbleSort(L):
 END ALGORITHM
 ```
 ## Optimization
-Bubble sort can be optimized by terminating when the list has been sorted early. To do this, the algorithm can keep track of a Boolean variable `swapped` that checks whether or not an element was swapped during the last run through the list. During the last run, when all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
+Bubble sort can be optimized by terminating when the list has been sorted early. To do this, the algorithm can keep track of a Boolean variable `swapped` that checks whether or not an element was swapped during the last run through the list. During the final run, when all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
 ALGORITHM bubbleSort(L):
     n := LENGTH(L)
