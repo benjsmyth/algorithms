@@ -20,7 +20,7 @@ ALGORITHM bubbleSort(A):
     n := LENGTH(A)
     DO:
         swapped := FALSE
-        FOR 1 <= i <= n-1:
+        FOR 1 <= i < n:
             IF A[i] < A[i-1]:
                 swap(A, i, i-1)
                 swapped := TRUE
@@ -35,7 +35,7 @@ ALGORITHM bubbleSort(A):
     n := LENGTH(A)
     DO:
         sorted := 0
-        FOR 1 <= i <= n-1:
+        FOR 1 <= i < n:
             IF A[i] < A[i-1]:
                 swap(A, i, i-1)
                 sorted := i
