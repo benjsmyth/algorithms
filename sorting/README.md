@@ -1,6 +1,7 @@
 # Sorting algorithms
 Sorting algorithms in computer science
 
+## Common methods
 The `swap` method is a simple exchange of values between two positions in a list.
 ```
 ALGORITHM swap(L, i, j):
