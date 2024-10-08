@@ -14,7 +14,7 @@ ALGORITHM bubbleSort(L):
 END ALGORITHM
 ```
 ## Optimization
-Bubble sort can be optimized by terminating when the list has been sorted early. To do this, the algorithm can keep track of a Boolean variable `swapped` that checks whether or not an element was swapped during the last run through the list. At the first run when all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
+Bubble sort can be optimized by terminating when the list has been sorted early. To do this, the algorithm can keep track of a Boolean variable `swapped` that checks whether or not an element was swapped during the previous run through the list. At the first run when all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
 ALGORITHM bubbleSort(L):
     n := LENGTH(L)
