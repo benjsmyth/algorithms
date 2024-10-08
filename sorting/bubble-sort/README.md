@@ -41,9 +41,9 @@ ALGORITHM bubbleSort(A):
                 sorted := i
             END IF
         END FOR
-        n = sorted
+        n := sorted
     WHILE n > 1
 END ALGORITHM
 ```
 ## Complexity
-Optimized or not, bubble sort is an inefficient algorithm. In the best case the time complexity is `O(N)`, but in the average and worst cases that becomes `O(N^2)` because the algorithm must compare an element to the rest of the elements in the list. However, bubble sort has a space complexity of `O(1)` because it only requires a constant amount of auxiliary space.
+Optimized or not, bubble sort is an inefficient algorithm. In the best case its time complexity is `O(N)`, but in the average and worst cases that becomes `O(N^2)` because the algorithm must compare an element to the rest of the elements in the list. However, bubble sort has a space complexity of `O(1)` because it only requires a constant amount of auxiliary space.
