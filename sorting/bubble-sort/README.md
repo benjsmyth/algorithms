@@ -1,6 +1,6 @@
 # Bubble sort
 ## Algorithm
-Bubble sort is a stable, online sorting algorithm that works by propagating elements up the array. Each time the algorithm runs through the array, it effectively sorts the next highest element in the array. The algorithm repeats this process until the array is sorted.
+Bubble sort is a **stable**, **online** sorting algorithm that works by propagating elements up the array. Each time the algorithm runs through the array, it effectively sorts the next highest element in the array. The algorithm repeats this process until the array is sorted.
 ```
 ALGORITHM bubbleSort(A):
     n := LENGTH(A)
