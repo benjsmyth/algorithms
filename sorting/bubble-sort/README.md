@@ -16,7 +16,7 @@ END ALGORITHM
 ## Optimization
 Bubble sort can be optimized by terminating when the array has been sorted. To do this, the algorithm must keep track of a Boolean variable `swapped` that remembers whether or not an element was swapped during the previous run through the list. When all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
-ALGORITHM bubbleSort(A):
+ALGORITHM bubbleSort2(A):
     n := length(A)
     DO:
         swapped := FALSE
@@ -31,7 +31,7 @@ END ALGORITHM
 ```
 Bubble sort can be further optimized by ignoring elements that have already been sorted. After every run, the array can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the previous swap occurred. When the cut-off reaches `1`, the algorithm terminates; if the array is sorted early, then the cut-off remains `0` and the algorithm terminates early.
 ```
-ALGORITHM bubbleSort(A):
+ALGORITHM bubbleSort3(A):
     n := length(A)
     DO:
         sorted := 0
