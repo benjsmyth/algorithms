@@ -3,7 +3,7 @@
 ## Algorithm
 Bubble sort is a **stable**, **online** sorting algorithm that works by propagating the highest elements upwards. Each time the algorithm runs through the array, it effectively sorts the next highest element in the array. The algorithm repeats this process until the array is sorted.
 ```
-ALGORITHM bubbleSort(array, N):
+ALGO bubbleSort(array, N):
     FOR 0 <= i < N:
         FOR 1 <= j < N:
             IF array[j] < array[j-1]:
@@ -11,13 +11,13 @@ ALGORITHM bubbleSort(array, N):
             END IF
         END FOR
     END FOR
-END ALGORITHM
+END ALGO
 ```
 
 ## Optimization
 Bubble sort can be optimized by terminating when the array has been sorted. To do this, the algorithm must keep track of a Boolean variable `swapped` that remembers whether or not an element was swapped during the previous run through the array. When all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
-ALGORITHM bubbleSort2(array, N):
+ALGO bubbleSort2(array, N):
     DO:
         swapped := FALSE
         FOR 1 <= i < N:
@@ -27,11 +27,11 @@ ALGORITHM bubbleSort2(array, N):
             END IF
         END FOR
     WHILE swapped
-END ALGORITHM
+END ALGO
 ```
 Bubble sort can be further optimized by ignoring elements that have already been sorted. After every run, the array can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the previous swap occurred. If the cut-off reaches `1`, the algorithm terminates; if the array is sorted early, then the cut-off remains `0` and the algorithm terminates early.
 ```
-ALGORITHM bubbleSort3(array, N):
+ALGO bubbleSort3(array, N):
     n := N
     DO:
         sorted := 0
@@ -43,7 +43,7 @@ ALGORITHM bubbleSort3(array, N):
         END FOR
         n := sorted
     WHILE n > 1
-END ALGORITHM
+END ALGO
 ```
 
 ## Complexity
