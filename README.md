@@ -1,2 +1,2 @@
 # Algorithms
-Algorithms in computer science
+A repository of common algorithms.
