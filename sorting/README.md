@@ -9,7 +9,9 @@ Many sorting algorithms share common methods in order to inspect or manipulate a
 Counts and returns the number of elements in an array.
 ```
 METHOD length(A):
-    RETURN size(A) / size(A[0])
+    arraySize := size(A)
+    elementSize := size(A[0])
+    RETURN arraySize / elementSize
 END METHOD
 ```
 Here, `size` is assumed to be an intrinsic method. In C, this corresponds to the `sizeof` operator; in higher-level programming languages, such as Java or Python, the size of an array is already an accessible property.
