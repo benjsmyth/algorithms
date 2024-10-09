@@ -10,7 +10,7 @@ void bubbleSort(int array[], const int N) {
         }
         ++i;
     }
-    while(i < N);
+    while (i < N);
 }
 
 void bubbleSort2(int array[], const int N) {
