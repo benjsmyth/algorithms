@@ -4,13 +4,14 @@
 Bubble sort is a **stable**, **online** sorting algorithm that propagates unordered elements towards the end of the array. Each time the algorithm runs through the array, it effectively sorts the next highest element. This process repeats as many times as the length of the array.
 ```
 ALGO bubbleSort(array, N):
-    FOR 1 <= _ <= N:
-        FOR 1 <= i < N:
-            IF array[i] < array[i-1]:
-                swap(array, i, i-1)
+    i := 0
+    DO:
+        FOR 1 <= j < N:
+            IF array[j] < array[j-1]:
+                swap(array, j, j-1)
             END IF
         END FOR
-    END FOR
+    WHILE i < N
 END ALGO
 ```
 Bubble sort can be improved by terminating when the array has been sorted. To do this, the algorithm must keep track of a Boolean variable `swapped` that remembers whether or not an element was swapped during the previous run through the array. When all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
