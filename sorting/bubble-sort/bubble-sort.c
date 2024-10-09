@@ -3,15 +3,15 @@
 #include <stdlib.h>
 
 void bubbleSort(int array[], const int N) {
-    int i = 0;
+    int n = 0;
     do {
-        for (int j=1; j < N; j++) {
-            if (array[j] < array[j-1])
-                swap(array, j, j-1);
+        for (int i=1; i < N; i++) {
+            if (array[i] < array[i-1])
+                swap(array, i, i-1);
         }
-        ++i;
+        ++n;
     }
-    while (i < N);
+    while (n < N);
 }
 
 void bubbleSort2(int array[], const int N) {
