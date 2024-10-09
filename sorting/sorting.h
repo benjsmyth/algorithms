@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void print(int array[], const int N) {
     putchar('[');
