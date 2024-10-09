@@ -6,7 +6,7 @@ Many sorting algorithms share common methods in order to inspect or manipulate a
 
 ---
 ### `swap`
-Exchanges the values between two positions in an array.
+The `swap` method exchanges the values between two positions in an array.
 ```
 METHOD swap(A, i, j):
     temp := A[i]
