@@ -14,7 +14,7 @@ METHOD length(A):
     RETURN arraySize / elementSize
 END METHOD
 ```
-Here, `size` is assumed to be an intrinsic method that returns a number of bytes. In C, this corresponds to the `sizeof` operator; in higher-level programming languages, such as Java or Python, the size of an array is already an accessible property.
+Here, `size` is an intrinsic method that returns a number of bytes. In C, this corresponds to the `sizeof` operator; in higher-level programming languages, such as Java or Python, the size of an array is already an accessible property.
 
 ---
 ### `swap`
