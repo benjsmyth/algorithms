@@ -55,7 +55,7 @@ int main(int argc, char* argv[]) {
     }
 
     bubbleSort(array, N);
-    printf("bubbleSort:\n"); print(array, N);
+    printf("bubbleSort\n"); print(array, N);
 
     bubbleSort2(array2, N);
     printf("bubbleSort2\n"); print(array2, N);
