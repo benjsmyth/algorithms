@@ -6,11 +6,11 @@ Many sorting algorithms share common methods in order to inspect or manipulate a
 
 ---
 ### `length`
-Counts the number of elements in an array.
+Counts and returns the number of elements in an array.
 ```
-ALGORITHM length(A):
+METHOD length(A):
     RETURN size(A) / size(A[0])
-END ALGORITHM
+END METHOD
 ```
 Here, `size` is assumed to be an intrinsic method. In C, this corresponds to the `sizeof` operator; in higher-level programming languages, such as Java or Python, the size of an array is already an accessible property.
 
@@ -18,9 +18,9 @@ Here, `size` is assumed to be an intrinsic method. In C, this corresponds to the
 ### `swap`
 Exchanges the values between two positions in an array.
 ```
-ALGORITHM swap(A, i, j):
-    temp = A[i]
-    A[i] = A[j]
-    A[j] = temp
-END ALGORITHM
+METHOD swap(A, i, j):
+    temp := A[i]
+    A[i] := A[j]
+    A[j] := temp
+END METHOD
 ```
