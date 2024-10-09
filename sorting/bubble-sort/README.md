@@ -1,10 +1,10 @@
 # Bubble sort
 
 ## Algorithm
-Bubble sort is a **stable**, **online** sorting algorithm that works by propagating unordered elements higher up the array. Each time the algorithm runs through the array, it effectively sorts the next highest element in the array. The algorithm repeats this process until the array is sorted.
+Bubble sort is a **stable**, **online** sorting algorithm that propagates unordered elements towards the end of the array. Each time the algorithm runs through the array, it effectively sorts the next highest element. This process repeats as many times as the length of the array.
 ```
 ALGO bubbleSort(array, N):
-    FOR 0 <= _ < N:
+    FOR 1 <= _ <= N:
         FOR 1 <= i < N:
             IF array[i] < array[i-1]:
                 swap(array, i, i-1)
@@ -15,7 +15,7 @@ END ALGO
 ```
 
 ## Optimization
-Bubble sort can be optimized by terminating when the array has been sorted. To do this, the algorithm must keep track of a Boolean variable `swapped` that remembers whether or not an element was swapped during the previous run through the array. When all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
+Bubble sort can be improved by terminating when the array has been sorted. To do this, the algorithm must keep track of a Boolean variable `swapped` that remembers whether or not an element was swapped during the previous run through the array. When all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
 ALGO bubbleSort2(array, N):
     DO:
@@ -29,7 +29,7 @@ ALGO bubbleSort2(array, N):
     WHILE swapped
 END ALGO
 ```
-Bubble sort can be further optimized by ignoring elements that have already been sorted. After every run, the array can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the previous swap occurred. If the cut-off reaches `1`, the algorithm terminates; if the array is sorted early, then the cut-off remains `0` and the algorithm terminates early.
+Bubble sort can be optimized by ignoring elements that have already been sorted. After every run, the array can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the previous swap occurred. If the cut-off reaches `1`, the algorithm terminates; if the array is sorted early, then the cut-off remains `0` and the algorithm terminates early.
 ```
 ALGO bubbleSort3(array, N):
     n := N
