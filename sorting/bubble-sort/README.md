@@ -4,10 +4,10 @@
 Bubble sort is a **stable**, **online** sorting algorithm that works by propagating the highest elements upwards. Each time the algorithm runs through the array, it effectively sorts the next highest element in the array. The algorithm repeats this process until the array is sorted.
 ```
 ALGO bubbleSort(array, N):
-    FOR 0 <= i < N:
-        FOR 1 <= j < N:
-            IF array[j] < array[j-1]:
-                swap(array, j, j-1)
+    FOR 0 <= _ < N:
+        FOR 1 <= i < N:
+            IF array[i] < array[i-1]:
+                swap(array, i, i-1)
             END IF
         END FOR
     END FOR
