@@ -10,7 +10,7 @@ void bubbleSort(int A[], const int N) {
 }
 
 void bubbleSort2(int A[], const int N) {
-    int swapped;
+    bool swapped;
     do {
         swapped = false;
         for (int i=1; i < N; i++) {
