@@ -13,8 +13,6 @@ ALGO bubbleSort(array, N):
     END FOR
 END ALGO
 ```
-
-## Optimization
 Bubble sort can be improved by terminating when the array has been sorted. To do this, the algorithm must keep track of a Boolean variable `swapped` that remembers whether or not an element was swapped during the previous run through the array. When all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
 ALGO bubbleSort2(array, N):
@@ -29,6 +27,8 @@ ALGO bubbleSort2(array, N):
     WHILE swapped
 END ALGO
 ```
+
+## Optimization
 Bubble sort can be optimized by ignoring elements that have already been sorted. After every run, the array can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the previous swap occurred. If the cut-off reaches `1`, the algorithm terminates; if the array is sorted early, then the cut-off remains `0` and the algorithm terminates early.
 ```
 ALGO bubbleSort3(array, N):
