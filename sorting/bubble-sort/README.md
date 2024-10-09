@@ -3,12 +3,11 @@
 ## Algorithm
 Bubble sort is a **stable**, **online** sorting algorithm that works by propagating the highest elements upwards. Each time the algorithm runs through the array, it effectively sorts the next highest element in the array. The algorithm repeats this process until the array is sorted.
 ```
-ALGORITHM bubbleSort(A):
-    n := length(A)
-    FOR 0 <= i < n:
-        FOR 1 <= j < n:
-            IF A[j] < A[j-1]:
-                swap(A, j, j-1)
+ALGORITHM bubbleSort(array, N):
+    FOR 0 <= i < N:
+        FOR 1 <= j < N:
+            IF array[j] < array[j-1]:
+                swap(array, j, j-1)
             END IF
         END FOR
     END FOR
@@ -18,13 +17,12 @@ END ALGORITHM
 ## Optimization
 Bubble sort can be optimized by terminating when the array has been sorted. To do this, the algorithm must keep track of a Boolean variable `swapped` that remembers whether or not an element was swapped during the previous run through the array. When all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
-ALGORITHM bubbleSort2(A):
-    n := length(A)
+ALGORITHM bubbleSort2(array, N):
     DO:
         swapped := FALSE
-        FOR 1 <= i < n:
-            IF A[i] < A[i-1]:
-                swap(A, i, i-1)
+        FOR 1 <= i < N:
+            IF array[i] < array[i-1]:
+                swap(array, i, i-1)
                 swapped := TRUE
             END IF
         END FOR
@@ -33,13 +31,13 @@ END ALGORITHM
 ```
 Bubble sort can be further optimized by ignoring elements that have already been sorted. After every run, the array can be virtually cut-off from the sorted portion, and this cut-off is the index `sorted` where the previous swap occurred. If the cut-off reaches `1`, the algorithm terminates; if the array is sorted early, then the cut-off remains `0` and the algorithm terminates early.
 ```
-ALGORITHM bubbleSort3(A):
-    n := length(A)
+ALGORITHM bubbleSort3(array, N):
+    n := N
     DO:
         sorted := 0
         FOR 1 <= i < n:
-            IF A[i] < A[i-1]:
-                swap(A, i, i-1)
+            IF array[i] < array[i-1]:
+                swap(array, i, i-1)
                 sorted := i
             END IF
         END FOR
