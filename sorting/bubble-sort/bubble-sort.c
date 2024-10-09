@@ -1,23 +1,45 @@
 #include "../sorting.h"
+#include <stdbool.h>
 
-void bubbleSort(int n, int* ints) {
-  int sorted;
-  do {
-    sorted = 0;
-    for (int i = 1; i < n; i++) {
-      if (ints[i] < ints[i-1]) {
-        swap(i, i-1, ints);
-        sorted = i;
-      }
+void bubbleSort(int A[], const int N) {
+    for (int i=0; i < N; i++) {
+        for (int j=1; j < N; j++) {
+            if (A[j] < A[j-1]) swap(A, j, j-1);
+        }
     }
-    n = sorted;
-  } while (n > 1);
+}
+
+void bubbleSort2(int A[], const int N) {
+    int swapped;
+    do {
+        swapped = false;
+        for (int i=1; i < N; i++) {
+            if (A[i] < A[i-1]) {
+                swap(A, i, i-1);
+                swapped = true;
+            }
+        }
+    } while (swapped);
+}
+
+void bubbleSort3(int A[], const int N) {
+    int n = N;
+    do {
+        int sorted = 0;
+        for (int i=1; i < N; i++) {
+            if (A[i] < A[i-1]) {
+                swap(A, i, i-1);
+                sorted = i;
+            }
+        }
+        n = sorted;
+    } while (n > 1);
 }
 
 int main(int argc, char* argv[]) {
-  const int n = argc-1;
-  int* ints = parseInts(n, argv);
-  bubbleSort(n, ints);
-  print(n, ints);
-  free(ints);
+  const int N = argc - 1;
+  int* A = parseInts(argv, N);
+  bubbleSort(A, N);
+  print(A, N);
+  free(A);
 }
