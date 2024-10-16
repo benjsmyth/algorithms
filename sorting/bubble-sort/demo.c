@@ -1,4 +1,5 @@
-#include "bubble-sort/bubble-sort.c"
+#include "bubble-sort.c"
+#include <stdlib.h>
 
 int main(int argc, char* argv[]) {
     const int N = argc-1;

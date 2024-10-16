@@ -1,6 +1,5 @@
 #include "../sorting.h"
 #include <stdbool.h>
-#include <stdlib.h>
 
 void bubbleSort(int array[], const int N) {
     int n = 0;
