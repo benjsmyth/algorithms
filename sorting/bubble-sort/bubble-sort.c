@@ -44,24 +44,31 @@ void bubbleSort3(int array[], const int N) {
 }
 
 int main(int argc, char* argv[]) {
+
+    // Size and arrays
     const int N = argc-1;
     int array[N], array2[N], array3[N];
 
+    // Read data into arrays
     for (int i=1; i <= N; i++) {
-        const int E = atoi(argv[i]);
-        array[i-1] = E;
-        array2[i-1] = E;
-        array3[i-1] = E;
+        const int I = atoi(argv[i]);
+        array[i-1] = I;
+        array2[i-1] = I;
+        array3[i-1] = I;
     }
 
+    // Sort arrays
     bubbleSort(array, N);
-    printf("bubbleSort\n"); print(array, N);
+    printf("bubbleSort\n");
+    print(array, N);
 
     bubbleSort2(array2, N);
-    printf("bubbleSort2\n"); print(array2, N);
+    printf("bubbleSort2\n");
+    print(array2, N);
 
     bubbleSort3(array3, N);
-    printf("bubbleSort3\n"); print(array3, N);
+    printf("bubbleSort3\n");
+    print(array3, N);
 
     return 0;
 }
