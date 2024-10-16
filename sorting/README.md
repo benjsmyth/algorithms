@@ -1,8 +1,8 @@
 # Sorting algorithms
 A collection of common sorting algorithms.
 
-## Common methods
-Methods that are shared by algorithms are stored here and referenced in the appropriate subdirectories of this repository.
+## Shared methods
+Methods that are commonly used by sorting algorithms.
 
 ---
 ### `swap`
