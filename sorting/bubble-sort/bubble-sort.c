@@ -50,11 +50,11 @@ int main(int argc, char* argv[]) {
     int array[N], array2[N], array3[N];
 
     // Read data into arrays
-    for (int i=1; i <= N; i++) {
-        const int I = atoi(argv[i]);
-        array[i-1] = I;
-        array2[i-1] = I;
-        array3[i-1] = I;
+    for (int i=0; i < N; i++) {
+        const int I = atoi(argv[i+1]);
+        array[i] = I;
+        array2[i] = I;
+        array3[i] = I;
     }
 
     // Sort arrays
