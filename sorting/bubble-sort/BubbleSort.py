@@ -7,7 +7,6 @@ def bubbleSort(array, N):
             if array[i] < array[i-1]:
                 swap(array, i, i-1)
         n += 1
-    return
 
 def bubbleSort2(array, N):
     swapped = True
@@ -17,7 +16,6 @@ def bubbleSort2(array, N):
             if array[i] < array[i-1]:
                 swap(array, i, i-1)
                 swapped = True
-    return
 
 def bubbleSort3(array, N):
     n = N
@@ -28,7 +26,6 @@ def bubbleSort3(array, N):
                 swap(array, i, i-1)
                 sorted = i
         n = sorted
-    return
 
 def swap(A, i, j):
   temp = A[i]

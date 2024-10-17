@@ -5,19 +5,20 @@ Bubble sort is a **stable**, **online** sorting algorithm that propagates unorde
 ```
 ALGO bubbleSort(array, N):
     n := 0
-    DO:
+    WHILE n < N
         FOR 1 <= i < N:
             IF array[i] < array[i-1]:
                 swap(array, i, i-1)
             END IF
         END FOR
-    WHILE n < N
+        n += 1
 END ALGO
 ```
 Bubble sort can be improved by terminating when the array has been sorted. To do this, the algorithm must keep track of a Boolean variable `swapped` that remembers whether or not an element was swapped during the previous run through the array. When all the elements have been sorted, `swapped` remains `false` and the algorithm terminates early.
 ```
 ALGO bubbleSort2(array, N):
-    DO:
+    swapped := TRUE
+    WHILE swapped:
         swapped := FALSE
         FOR 1 <= i < N:
             IF array[i] < array[i-1]:
@@ -25,7 +26,6 @@ ALGO bubbleSort2(array, N):
                 swapped := TRUE
             END IF
         END FOR
-    WHILE swapped
 END ALGO
 ```
 
@@ -34,7 +34,7 @@ Bubble sort can be optimized by ignoring elements that have already been sorted.
 ```
 ALGO bubbleSort3(array, N):
     n := N
-    DO:
+    WHILE n > 1:
         sorted := 0
         FOR 1 <= i < n:
             IF array[i] < array[i-1]:
@@ -43,7 +43,6 @@ ALGO bubbleSort3(array, N):
             END IF
         END FOR
         n := sorted
-    WHILE n > 1
 END ALGO
 ```
 
