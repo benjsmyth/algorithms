@@ -35,17 +35,20 @@ def swap(A, i, j):
   A[i] = A[j]
   A[j] = temp
 
+# Prepare memory
 N = len(argv)-1
 array = []
 array2 = []
 array3 = []
 
+# Read integers
 for x in argv[1:]:
     I = int(x)
     array.append(I)
     array2.append(I)
     array3.append(I)
 
+# Demonstrate
 print("bubbleSort")
 bubbleSort(array, N)
 print(array)
