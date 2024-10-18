@@ -1,14 +1,14 @@
 #include "../sorting.h"
 
-void insertionSort(int n, int* array) {
-    for (int i = 1; i < n; i++)
-        for (int j = i; j > 0; j--)
+void insertionSort(int* array, const int N) {
+    for (int i=1; i < N; i++)
+        for (int j=i; j > 0; j--)
             if (array[j] < array[j-1])
                 swap(j, j-1, array);
 }
 
-void insertionSort2(int n, int* array) {
-    for (int i = 1; i < n; i++) {
+void insertionSort2(int* array, const int N) {
+    for (int i=1; i < N; i++) {
         int x = array[i];
         int j = i;
         while ( (j > 0) && (x < array[j-1]) ) {
@@ -20,9 +20,9 @@ void insertionSort2(int n, int* array) {
 }
 
 int main(int argc, char* argv[]) {
-    
+
     // Prepare memory
-    const int N = argc-1;
+    const int N = argc - 1;
     int array[N], array2[N];
 
     // Read integers
