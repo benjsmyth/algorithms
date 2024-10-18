@@ -7,7 +7,7 @@ void insertionSort(int n, int* array) {
                 swap(j, j-1, array);
 }
 
-void insertionSortCopy(int n, int* array) {
+void insertionSort2(int n, int* array) {
     for (int i = 1; i < n; i++) {
         int x = array[i];
         int j = i;
@@ -20,9 +20,24 @@ void insertionSortCopy(int n, int* array) {
 }
 
 int main(int argc, char* argv[]) {
-    const int n = argc - 1;
-    int* array = parseInts(n, argv);
-    insertionSort(n, array);
-    print(n, array);
-    free(array);
+    
+    // Prepare memory
+    const int N = argc-1;
+    int array[N], array2[N];
+
+    // Read integers
+    for (int i=0; i < N; i++) {
+        const int I = atoi(argv[i+1]);
+        array[i] = I;
+        array2[i] = I;
+    }
+
+    // Demonstrate
+    printf("insertionSort\n");
+    insertionSort(array, N);
+    print(array, N);
+
+    printf("insertionSort2\n");
+    insertionSort2(array2, N);
+    print(array2, N);
 }
