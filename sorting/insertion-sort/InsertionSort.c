@@ -1,10 +1,11 @@
 #include "../sorting.h"
+#include <stdlib.h>
 
 void insertionSort(int* array, const int N) {
     for (int i=1; i < N; i++)
         for (int j=i; j > 0; j--)
             if (array[j] < array[j-1])
-                swap(j, j-1, array);
+                swap(array, j, j-1);
 }
 
 void insertionSort2(int* array, const int N) {
